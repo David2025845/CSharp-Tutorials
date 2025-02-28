@@ -1,43 +1,94 @@
 ﻿using System;
+using System.Collections;
 
-namespace restaurant;
-public class Staff
+class program
 {
-    public int staffId { get; set; }
-    public string FirstName { get; set; } = null!;
-    public string LastName { get; set;} = null!;
-    public string Designation { get; set; } = null!;
-    public string Password { get; set; } = null!;
-    public Staff create(int staffid , string FirstName, string LastName , string designation , string password);
+    static void Main()
     {
-        public bool update(int id, string FirstName , string LastName , string Designation , string password )
+        while (true)
         {
-            var staff = _staffList.FirstorDefault(s => s.id==id);
-            if (staff==null)
-            return false;
+            Console.WriteLine("Application Module");
+            Console.WriteLine("1. Staff Management");
+            Console.WriteLine("2. Restaurant Management");
+            Console.WriteLine("3. Exit");
+            Console.WriteLine("select an option");
 
-            staff.staffId = staffId
-            staff.FirstName = FirstName
-            staff.LastName = LastName
-            staff.Designation = Designation
-            staff.Password = password
-            return true;
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                StaffManagement();
+                break;
+                case "2":
+                RestaurantManagement();
+                break;
+                case "3":
+                return;
+                default:
+                Console.WriteLine("invalid selection , please try again .");
+            }
         }
-        public bool Delete(int id)
+    }
+    static void StaffManagement()
+    {
+        while (true)
         {
-            var staff = staffList.FirstorDefault(s =>s.id==id);
-            if (staff==null)
-            return false;
-            _staffList.Remove(staff);
-            return true;
+            Console.WriteLine("staff management");
+            Console.WriteLine("1. view staff");
+            Console.WriteLine("2. create staff");
+            Console.WriteLine("3. edit staff");
+            Console.WriteLine("4. back");
+            Console.WriteLine("select an option");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                Console.WriteLine("viewing staff...");
+                break;
+                case "2":
+                Console.WriteLine("creating staff...");
+                break;
+                case "3":
+                Console.WriteLine("editing staff...");
+                break;
+                case "4":
+                return;
+                default:
+                Console.WriteLine("invalid selection, please try again");
+                break;
+            }
+        }
+    }
+    static void RestaurantManagement()
+    {
+        while (true)
+        {
+            Console.WriteLine("Restaurant Management");
+            Console.WriteLine("1. Menu setup");
+            Console.WriteLine("2. Menu item setup");
+            Console.WriteLine("3. back");
+            Console.WriteLine("select an option");
+            string choice = Console.ReadLine();
+            switch (choice)
+            case "1":
+            Console.WriteLine("setting up menu...");
+            break;
+            case "2":
+            Console.WriteLine("setting up menu items...");
+            break;
+            case "3":
+            return;
+            default:
+            Console.WriteLine("invalid selection, please try again.............");
+            break;
         }
     }
 }
 
 
-
-    
-
+                
 
 
 
+
+        
